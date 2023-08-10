@@ -1,0 +1,19 @@
+{    
+    "send":[
+        {
+            "BARK": "",                 
+            "SCKEY": "",                 
+            "TG_BOT_TOKEN": "",         
+            "TG_USER_ID": "",            
+            "TG_API_HOST":"",             
+            "TG_PROXY_IP": "",           
+            "TG_PROXY_PORT": "",          
+            "DD_BOT_ACCESS_TOKEN": "",   
+            "DD_BOT_SECRET": "",  
+            "QQ_SKEY": "",                
+            "QQ_MODE": "",                
+            "QYWX_AM": "",                
+            "PUSH_PLUS_TOKEN": ""        
+        } 
+    ]
+}
