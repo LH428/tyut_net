@@ -66,7 +66,10 @@ def login_request(name, password):
     try:
         
         response = requests.get(LOGIN_PAGE_URL, data1)
-        
+        msg(" Hello ! ")
+        msg('当前ip：'+ user_ip)
+        message = msg().message()
+        send("ip变更通知", message)
         if response.status_code == 200:
             print('respon:',response.text)
             #旧ip被使用，则使用新的ip
@@ -161,10 +164,6 @@ def main():
     else:
         print("[02] {} openwrt is online  ".format(
             datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
-        msg(" Hello ! ")
-        msg('当前ip：'+ user_ip)
-        message = msg().message()
-        send("ip变更通知", message)
 
 if __name__ == "__main__":
     try:
@@ -172,4 +171,3 @@ if __name__ == "__main__":
     except Exception as e:
         print('[ERROR]:'),
         print(e)
-
