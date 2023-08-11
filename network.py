@@ -92,6 +92,14 @@ def login_request(name, password):
     except:
         print("[00] {} requsest error ，openwrt is not connected to Internet ".format(
             datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+        new_ip = get_ip()
+        data1['wlan_user_ip'] = new_ip
+        print('获取新ip:',data1["wlan_user_ip"])
+        modify_user_ip_in_file(new_ip)
+
+        response = requests.get(LOGIN_PAGE_URL, data1)
+        print("[01] {} login success  ".format(
+                datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')),'new ip:',new_ip)
 
 def parse_jsonp_response(response):
     json_str_match = re.search(r'\((.*?)\)', response.text)
